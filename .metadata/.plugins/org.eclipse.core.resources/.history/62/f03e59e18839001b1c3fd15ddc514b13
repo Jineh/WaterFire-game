@@ -1,0 +1,114 @@
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Graphics;
+import java.awt.Image;
+
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+
+
+public class JavaGameClientRoom extends JFrame{
+	
+	
+public JavaGameClientRoom() {
+
+		
+
+		//setTitle("Graphic Game Test");
+		setTitle("Graphic");
+
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		Container cc = getContentPane();
+		cc.setLayout(null);
+		
+		ImageIcon icon4 = new ImageIcon("g2.png");
+		
+		JPanel c = new JPanel() {
+            public void paintComponent(Graphics g) {
+                // Approach 1: Dispaly image at at full size
+                g.drawImage(icon4.getImage(), 0, 0, null);
+                
+                setOpaque(false); //그림을 표시하게 설정,투명하게 조절
+                super.paintComponent(g);
+            }
+        };
+
+		
+		
+		
+		ImageIcon icon = new ImageIcon("bg1.png");
+		Image img= icon.getImage();
+		Image changeImg = img.getScaledInstance(300, 300, img.SCALE_SMOOTH);
+		ImageIcon changeIcon = new ImageIcon(changeImg);
+		JLabel imgLabel = new JLabel(changeIcon);
+		
+		imgLabel.setSize(300,300);
+		imgLabel.setLocation(30,30);
+		c.add(imgLabel);
+		
+		
+		ImageIcon icon2 = new ImageIcon("bg1.png");
+		Image img2= icon2.getImage();
+		Image changeImg2 = img2.getScaledInstance(300, 300, img2.SCALE_SMOOTH);
+		ImageIcon changeIcon2 = new ImageIcon(changeImg2);
+		JLabel imgLabel2 = new JLabel(changeIcon2);
+		
+		imgLabel2.setSize(300,300);
+		imgLabel2.setLocation(360,30);
+		c.add(imgLabel2);
+		
+		ButtonGroup g = new ButtonGroup();
+		
+		JRadioButton b1= new JRadioButton("");
+		JRadioButton b2= new JRadioButton("");
+		
+		b1.setSize(50,50);
+		b2.setSize(50,50);
+		b1.setLocation(160,340);
+		b2.setLocation(500,340);
+		
+		b1.setBackground(Color.BLACK);
+		
+		g.add(b1);
+		g.add(b2);
+		
+		c.add(b1);
+		c.add(b2);
+		
+		//b1.addItemListener(new MuItemListener());
+		
+		ImageIcon icon3 = new ImageIcon("button.png");
+		Image img3= icon3.getImage();
+		Image changeImg3 = img3.getScaledInstance(100, 100, img3.SCALE_SMOOTH);
+		ImageIcon changeIcon3 = new ImageIcon(changeImg3);
+		//JLabel imgLabel3 = new JLabel(changeIcon3);
+		
+		JButton cb= new JButton("",changeIcon3);
+		
+		cb.setSize(100,100);
+		cb.setLocation(300,420);
+		c.add(cb);
+		
+		cc.add(c);
+
+		setBounds(0, 0, 714, 637);
+	
+		setVisible(true);
+		
+		
+
+		
+}
+
+
+
+	public static void main(String [] args) {
+		new JavaGameClientRoom();
+	}
+
+}

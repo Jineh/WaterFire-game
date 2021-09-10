@@ -1,0 +1,8 @@
+INDEX VERSION 1.131+C:\Users\lst55\OneDrive\Desktop\3-2\network\NetP09-java2\.metadata\.plugins\org.eclipse.jdt.core
+1574843208.index
+3528323770.index
+2577175673.index
+2431781563.index
+1857363088.index
+1331962649.index
+232512280.index
